@@ -3,6 +3,11 @@ import mysql.connector
 
 app = FastAPI()
 
+# Root endpoint
+@app.get("/")
+async def root():
+    return {"message": "Welcome to the Task Management System!"}
+
 # Database connection
 def get_db_connection():
     return mysql.connector.connect(
